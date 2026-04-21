@@ -2,11 +2,11 @@
 Wex Assignment - 
 This is a Spring Boot application that:
 
-Stores purchase transactions in USD
-Retrieves transactions by ID
-Converts the amount to a target currency using U.S. Treasury exchange rates
-Uses an H2 in-memory database
-Integrates with Treasury Fiscal Data API
+1) Stores purchase transactions in USD
+2) Retrieves transactions by ID
+3) Converts the amount to a target currency using U.S. Treasury exchange rates
+4) Uses an H2 in-memory database
+5) Integrates with Treasury Fiscal Data API
 
 # Running the Endpoints
 1) Store a Purchase Transaction
