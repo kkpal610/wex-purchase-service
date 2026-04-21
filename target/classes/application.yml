@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: wex-purchase-service
+  datasource:
+    url: jdbc:h2:mem:purchasedb
+    driverClassName: org.h2.Driver
+    username: wexservice
+    password:
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+        ddl-auto: create-drop
+      show-sql: false
+    h2:
+      console:
+        enabled: true
+        path: /h2-console
+
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
+treasury:
+  api:
+    url: https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange
+    max-retries: 3
+    timeout-seconds: 10
+
+logging:
+  level:
+    com.wex.purchase: DEBUG
+    org.springframework.web: INFO
