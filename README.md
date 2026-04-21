@@ -8,6 +8,11 @@ This is a Spring Boot application that:
 4) Uses an H2 in-memory database
 5) Integrates with Treasury Fiscal Data API
 
+# Note: List of country names can be found from here 
+
+https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange
+
+
 # Running the Endpoints
 1) Store a Purchase Transaction
    ```
@@ -32,6 +37,8 @@ This is a Spring Boot application that:
    ```
 
 3) Retrieve a purchase transaction in a specified country's currency
+
+   `Endpoint: /api/purchases/{purchaseId}/convert?country={country}`
    ```
    curl --location 'http://localhost:8081/api/purchases/52ae7ee4-3407-49f8-a5c8-9b9ee2e2f4b5/convert?country=canada' \
     --header 'Content-Type: application/json'
