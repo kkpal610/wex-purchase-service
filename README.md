@@ -21,8 +21,32 @@ Integrates with Treasury Fiscal Data API
     }'
    ```
 
-2) Retrieve a purchase transaction in a specified country's currency
+   Response
    ```
-   curl --location 'http://localhost:8081/api/purchases/52ae7ee4-3407-49f8-a5c8-9b9ee2e2f4b5/convert?country=india' \
+   {
+    "id": "cb5f8d22-44c5-4375-9ad2-45ca15fdbb3f",
+    "description": "Mouse",
+    "transactionDate": "2026-01-15",
+    "amountUSD": 31.23
+   } 
+   ```
+
+3) Retrieve a purchase transaction in a specified country's currency
+   ```
+   curl --location 'http://localhost:8081/api/purchases/52ae7ee4-3407-49f8-a5c8-9b9ee2e2f4b5/convert?country=canada' \
     --header 'Content-Type: application/json'
+   ```
+
+   Response
+   ```
+   {
+       "id": "52ae7ee4-3407-49f8-a5c8-9b9ee2e2f4b5",
+       "description": "Mouse",
+       "transactionDate": "2026-01-15",
+       "originalAmountUSD": 31.23,
+       "exchangeRate": 1.369,
+       "targetCountry": "CANADA",
+       "targetCurrency": "Canada-Dollar",
+       "convertedAmount": 42.75
+   }
    ```
